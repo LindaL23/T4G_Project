@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Shop Lindaré slippers, bags, phone cases and lifestyle essentials."
+    >
+
+    <title>Shop | Lindaré</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../src/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+
+            <a href="../index.html" class="logo">Lindaré</a>
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+            <nav class="navigation" id="navigation">
+                <a href="../index.html">Home</a>
+                <a href="./shop.html" class="active">Shop</a>
+                <a href="../index.html#about">About</a>
+                <a href="./contact.html">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+
+                <form class="search-form" id="shopSearchForm">
+                    <input
+                        type="search"
+                        id="shopSearch"
+                        placeholder="Search products..."
+                        aria-label="Search products"
+                    >
+
+                    <button type="submit" aria-label="Search">
+                        &#128269;
+                    </button>
+                </form>
+
+                <a href="./login.html" class="icon-link" aria-label="Login">
+                    &#128100;
+                </a>
+
+                <a href="./cart.html" class="cart-link" aria-label="Shopping cart">
+                    &#128717;
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+
+            </div>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="shop-banner">
+            <div class="container shop-banner-content">
+
+                <div>
+                    <p class="eyebrow">Shop our collection</p>
+                    <h1>Find something made for you.</h1>
+
+                    <p>
+                        Browse stylish slippers, bags, phone cases,
+                        accessories and everyday essentials.
+                    </p>
+                </div>
+
+                <img
+                    src="../images/hero-banner.png"
+                    alt="Lindaré leather bag and slippers"
+                >
+
+            </div>
+        </section>
+
+
+        <section class="shop-section">
+            <div class="container shop-layout">
+
+                <aside class="shop-filter">
+
+                    <div class="shop-filter-heading">
+                        <h2>Filter By</h2>
+
+                        <button
+                            type="button"
+                            class="filter-close"
+                            id="filterClose"
+                            aria-label="Close filters"
+                        >
+                            ×
+                        </button>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Categories</h3>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="category"
+                                value="all"
+                                checked
+                            >
+                            All Products
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="category"
+                                value="slippers"
+                            >
+                            Slippers
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="category"
+                                value="bags"
+                            >
+                            Bags
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="category"
+                                value="cases"
+                            >
+                            Phone Cases
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="category"
+                                value="accessories"
+                            >
+                            Accessories
+                        </label>
+
+                            <label>
+                            <input
+                                type="radio"
+                                name="category"
+                                value="fragrance"
+                            >
+                            Fragrance
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="category"
+                                value="essentials"
+                            >
+                            Essentials
+                        </label>
+                    </div>
+
+                </aside>
+
+
+                <div class="shop-products">
+
+                    <div class="shop-toolbar">
+
+                        <div>
+                            <h2>Shop All</h2>
+                            <p id="productCount">9 products</p>
+                        </div>
+
+                        <div class="shop-controls">
+
+                            <button
+                                type="button"
+                                class="filter-button"
+                                id="filterButton"
+                            >
+                                Filter
+                            </button>
+
+                            <select id="sortProducts" aria-label="Sort products">
+                                <option value="default">Featured</option>
+                                <option value="low">Price: Low to High</option>
+                                <option value="high">Price: High to Low</option>
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="product-grid shop-product-grid" id="shopProductGrid">
+
+                        <article
+                            class="product-card shop-product"
+                            data-name="Platform Slippers"
+                            data-category="slippers"
+                            data-price="300"
+                        >
+                            <a href="./product-details.html">
+                                <img
+                                    src="../images/black-platform.png"
+                                    alt="Platform slippers"
+                                >
+                            </a>
+
+                            <div class="product-info">
+                                <h3>
+                                    <a href="./product-details.html">
+                                        Platform Slippers
+                                    </a>
+                                </h3>
+
+                                <p class="product-price">GHS 300</p>
+                                <p class="rating">★★★★★ <span>(24)</span></p>
+
+                                <button
+                                    class="add-cart-button"
+                                    type="button"
+                                    data-name="Platform Slippers"
+                                    data-price="300"
+                                    data-image="../images/black-platform.png"
+                                >
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </article>
+
+
+                        <article
+                            class="product-card shop-product"
+                            data-name="Brown Classy Bag"
+                            data-category="bags"
+                            data-price="200"
+                        >
+                            <img
+                                src="../images/brown-bag.png"
+                                alt="Brown leather bag"
+                            >
+
+                            <div class="product-info">
+                                <h3>Brown Classy Bag</h3>
+                                <p class="product-price">GHS 200</p>
+                                <p class="rating">★★★★★ <span>(18)</span></p>
+
+                                <button
+                                    class="add-cart-button"
+                                    type="button"
+                                    data-name="Brown Classy Bag"
+                                    data-price="200"
+                                    data-image="../images/brown-bag.png"
+                                >
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </article>
+
+
+                        <article
+                            class="product-card shop-product"
+                            data-name="Floral Phone Case"
+                            data-category="cases"
+                            data-price="80"
+                        >
+                            <img
+                                src="../images/floral-phone-case.png"
+                                alt="Floral phone case"
+                            >
+
+                            <div class="product-info">
+                                <h3>Floral Phone Case</h3>
+                                <p class="product-price">GHS 80</p>
+                                <p class="rating">★★★★★ <span>(31)</span></p>
+
+                                <button
+                                    class="add-cart-button"
+                                    type="button"
+                                    data-name="Floral Phone Case"
+                                    data-price="80"
+                                    data-image="../images/floral-phone-case.png"
+                                >
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </article>
+
+
+                        <article
+                            class="product-card shop-product"
+                            data-name="Lip Gloss"
+                            data-category="Beautyessentials"
+                            data-price="50"
+                        >
+                            <img
+                                src="../images/lip-gloss2.png"
+                                alt="Mini essentials pouch"
+                            >
+
+                            <div class="product-info">
+                                <h3>Classy Lip Gloss</h3>
+                                <p class="product-price">GHS 50</p>
+                                <p class="rating">★★★★★ <span>(11)</span></p>
+
+                                <button
+                                    class="add-cart-button"
+                                    type="button"
+                                    data-name="Classy Lip Gloss"
+                                    data-price="50"
+                                    data-image="../images/lip-gloss2.png"
+                                >
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </article>
+
+
+                        <article
+                            class="product-card shop-product"
+                            data-name="Purple Handbag"
+                            data-category="bags"
+                            data-price="300"
+                        >
+                            <img
+                                src="../images/purple-bag.png"
+                                alt="Purple handbag"
+                            >
+
+                            <div class="product-info">
+                                <h3> The SHE Handbag</h3>
+                                <p class="product-price">GHS 300</p>
+                                <p class="rating">★★★★★ <span>(18)</span></p>
+
+                                <button
+                                    class="add-cart-button"
+                                    type="button"
+                                    data-name="purple Handbag"
+                                    data-price="300"
+                                    data-image="../images/purple-bag.png"
+                                >
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </article>
+
+
+                        <article
+                            class="product-card shop-product"
+                            data-name="Fashon Bracelet"
+                            data-category="accessories"
+                            data-price="100"
+                        >
+                            <img
+                                src="../images/bracelet1.png"
+                                alt="Fashion bracelet"
+                            >
+
+                            <div class="product-info">
+                                <h3>Fashion Bracelet</h3>
+                                <p class="product-price">GHS 100</p>
+                                <p class="rating">★★★★★ <span>(13)</span></p>
+
+                                <button
+                                    class="add-cart-button"
+                                    type="button"
+                                    data-name="Fashion Bracelet"
+                                    data-price="100"
+                                    data-image="../images/bracelet1.png"
+                                >
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </article>
+
+
+                        <article
+                            class="product-card shop-product"
+                            data-name="Classic Sandals"
+                            data-category="slippers"
+                            data-price="170"
+                        >
+                            <img
+                                src="../images/classic-sandals.png"
+                                alt="Black leather sandals"
+                            >
+
+                            <div class="product-info">
+                                <h3>Classic Sandals</h3>
+                                <p class="product-price">GHS 170</p>
+                                <p class="rating">★★★★★ <span>(23)</span></p>
+
+                                <button
+                                    class="add-cart-button"
+                                    type="button"
+                                    data-name="Classic Sandals"
+                                    data-price="170"
+                                    data-image="../images/classic-sandals.png"
+                                >
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </article>
+
+
+                        <article
+                            class="product-card shop-product"
+                            data-name="Essentials Set"
+                            data-category="essentials"
+                            data-price="120"
+                        >
+                            <img
+                                src="../images/essentials-set.png"
+                                alt="Lifestyle essentials set"
+                            >
+
+                            <div class="product-info">
+                                <h3>Essentials Set</h3>
+                                <p class="product-price">GHS 120</p>
+                                <p class="rating">★★★★★ <span>(17)</span></p>
+
+                                <button
+                                    class="add-cart-button"
+                                    type="button"
+                                    data-name="Essentials Set"
+                                    data-price="120"
+                                    data-image="../images/essentials-set.png"
+                                >
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </article>
+
+
+                         <article
+                            class="product-card shop-product"
+                            data-name="Diffuser"
+                            data-category="fragrance"
+                            data-price="150"
+                        >
+                            <img
+                                src="../images/diffuser image.jpeg"
+                                alt="Unique diffuser"
+                            >
+
+                            <div class="product-info">
+                                <h3>Unique Diffusers</h3>
+                                <p class="product-price">GHS 150</p>
+                                <p class="rating">★★★★★ <span>(31)</span></p>
+
+                                <button
+                                    class="add-cart-button"
+                                    type="button"
+                                    data-name="Unique diffuser"
+                                    data-price="150"
+                                    data-image="../images/diffuser-image.png"
+                                >
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </article>
+
+                    </div>
+
+
+                    <p class="no-products" id="noProducts">
+                        No products found.
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+        <div class="container footer-grid">
+
+            <div>
+                <a href="../index.html" class="footer-logo">Lindaré</a>
+
+                <p>
+                    Fashion and lifestyle essentials selected with
+                    quality, comfort and care.
+                </p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <a href="../index.html">Home</a>
+                <a href="./shop.html">Shop</a>
+                <a href="../index.html#about">About</a>
+                <a href="./contact.html">Contact</a>
+            </div>
+
+            <div>
+                <h3>Customer Care</h3>
+                <a href="#">FAQs</a>
+                <a href="#">Shipping & Delivery</a>
+                <a href="#">Returns & Refunds</a>
+            </div>
+
+            <div>
+                <h3>Contact Us</h3>
+                <p>+233 50 123 4567</p>
+                <p>hello@lindare.com</p>
+                <p>Accra, Ghana</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Lindaré. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <div
+        class="notification"
+        id="notification"
+        aria-live="polite"
+    ></div>
+
+    <script src="../src/script.js"></script>
+</body>
+</html>

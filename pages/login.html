@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Sign in to your Lindaré account."
+    >
+
+    <title>Login | Lindaré</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../src/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+
+            <a href="../index.html" class="logo">Lindaré</a>
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+            <nav class="navigation" id="navigation">
+                <a href="../index.html">Home</a>
+                <a href="./shop.html">Shop</a>
+                <a href="../index.html#about">About</a>
+                <a href="./contact.html">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="./login.html" class="icon-link" aria-label="Login">
+                    &#128100;
+                </a>
+
+                <a href="./cart.html" class="cart-link" aria-label="Shopping cart">
+                    &#128717;
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main class="auth-page">
+
+        <section class="auth-layout">
+
+            <div class="auth-image">
+                <img
+                    src="../images/hero-banner.png"
+                    alt="Lindaré handmade slippers, bag and phone case"
+                >
+
+                <div class="auth-image-text">
+                    <p class="eyebrow">Welcome to Lindaré</p>
+
+                    <h1>Style crafted for everyday living.</h1>
+
+                    <p>
+                        Sign in to manage your account, review your cart
+                        and continue shopping.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="auth-form-area">
+
+                <form class="auth-form" id="loginForm">
+
+                    <div class="auth-heading">
+                        <p class="eyebrow">Welcome back</p>
+                        <h2>Sign in to your account</h2>
+                        <p>Enter your details to continue.</p>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="loginEmail">Email Address</label>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            placeholder="name@example.com"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <div class="password-label">
+                            <label for="loginPassword">Password</label>
+                            <a href="#" class="forgot-link">Forgot password?</a>
+                        </div>
+
+                        <div class="password-field">
+                            <input
+                                type="password"
+                                id="loginPassword"
+                                placeholder="Enter your password"
+                                minlength="6"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                data-password-target="loginPassword"
+                                aria-label="Show password"
+                            >
+                                Show
+                            </button>
+                        </div>
+
+                    </div>
+
+
+                    <label class="remember-option">
+                        <input type="checkbox" id="rememberMe">
+                        <span>Remember me</span>
+                    </label>
+
+
+                    <p
+                        class="form-message"
+                        id="loginMessage"
+                        aria-live="polite"
+                    ></p>
+
+
+                    <button type="submit" class="primary-button auth-button">
+                        Sign In
+                    </button>
+
+
+                    <div class="form-divider">
+                        <span>or</span>
+                    </div>
+
+
+                    <button type="button" class="social-login-button">
+                        Continue with Google
+                    </button>
+
+
+                    <p class="auth-switch">
+                        Don’t have an account?
+                        <a href="./signup.html">Create one</a>
+                    </p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+        <div class="container footer-grid">
+
+            <div>
+                <a href="../index.html" class="footer-logo">Lindaré</a>
+
+                <p>
+                    Handmade fashion and lifestyle essentials created
+                    with quality and care.
+                </p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <a href="../index.html">Home</a>
+                <a href="./shop.html">Shop</a>
+                <a href="../index.html#about">About</a>
+                <a href="./contact.html">Contact</a>
+            </div>
+
+            <div>
+                <h3>Customer Care</h3>
+                <a href="#">FAQs</a>
+                <a href="#">Shipping & Delivery</a>
+                <a href="#">Returns & Refunds</a>
+            </div>
+
+            <div>
+                <h3>Contact Us</h3>
+                <p>+233 50 123 4567</p>
+                <p>hello@lindare.com</p>
+                <p>Accra, Ghana</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Lindaré. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <div
+        class="notification"
+        id="notification"
+        aria-live="polite"
+    ></div>
+
+    <script src="../src/script.js"></script>
+</body>
+</html>
