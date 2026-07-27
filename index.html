@@ -10,1215 +10,454 @@
 
     <meta
         name="description"
-        content="Lindaré offers handcrafted fashion and lifestyle essentials including slippers, bags, phone cases and accessories."
+        content="Lindaré offers handmade slippers, bags, phone cases and lifestyle essentials."
     >
 
-    <title>Lindaré | Handcrafted Fashion & Lifestyle Essentials</title>
+    <title>Lindaré | Handmade Fashion & Lifestyle Essentials</title>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
         rel="stylesheet"
     >
 
-    <!-- Main CSS -->
     <link rel="stylesheet" href="./src/style.css">
 </head>
 
 <body>
 
-    <!-- =====================================
-         HEADER AND NAVIGATION
-    ====================================== -->
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container nav-container">
 
-    <header class="site-header">
-
-        <div class="container nav-wrapper">
-
-            <button
-                class="menu-toggle"
-                type="button"
-                aria-label="Open navigation menu"
-                aria-controls="primary-nav"
-                aria-expanded="false"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <a
-                href="#home"
-                class="brand"
-                aria-label="Lindaré homepage"
-            >
+            <a href="index.html" class="logo">
                 Lindaré
             </a>
 
-            <nav
-                class="primary-nav"
-                id="primary-nav"
-                aria-label="Primary navigation"
+            <button
+                class="menu-button"
+                id="menuButton"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
             >
-                <a href="#home" class="active">Home</a>
-                <a href="#shop">Shop</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+                ☰
+            </button>
+
+            <nav class="navigation" id="navigation">
+             <a href="./index.html" class="active">Home</a>
+             <a href="./pages/shop.html">Shop</a>
+             <a href="#about">About</a>
+             <a href="./pages/contact.html">Contact</a>
             </nav>
 
             <div class="nav-actions">
-
-                <button
-                    class="icon-button search-button"
-                    type="button"
-                    aria-label="Search products"
-                >
-                    <svg
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
+                <form class="search-form">
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search products..."
+                        aria-label="Search products"
                     >
-                        <path
-                            d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"
-                        />
-                    </svg>
-                </button>
+                    <button type="submit" aria-label="Search">
+                        &#128269;
+                    </button>
+                </form>
 
-                <button
-                    class="icon-button account-button"
-                    type="button"
-                    aria-label="Open account"
-                >
-                    <svg
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
-                        <path
-                            d="M20 21a8 8 0 0 0-16 0m12-13a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"
-                        />
-                    </svg>
-                </button>
+                  <a href="./pages/login.html" class="icon-link" aria-label="Login">
+                    &#128100;
+                   </a>
 
-                <button
-                    class="icon-button cart-button"
-                    type="button"
-                    aria-label="Open shopping cart"
-                >
-                    <svg
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
-                        <path
-                            d="M3 4h2l2.1 10.1a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.6L20.5 8H6M10 20h.01M17 20h.01"
-                        />
-                    </svg>
-
-                    <span class="cart-count">3</span>
-                </button>
-
+                <a href="./pages/cart.html" class="cart-link" aria-label="Shopping cart">
+                    &#128717;
+                    <span class="cart-count" id="cartCount">0</span>
+                   </a>
             </div>
 
         </div>
-
     </header>
 
 
     <main>
 
-        <!-- =====================================
-             HERO SECTION
-        ====================================== -->
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
 
-        <section class="hero" id="home">
-
-            <div class="container hero-grid">
-
-                <div class="hero-copy">
-
-                    <span class="eyebrow">
-                        Made with intention
-                    </span>
+                <div class="hero-text">
+                    <p class="eyebrow">Handcrafted with love</p>
 
                     <h1>
-                        Handcrafted Fashion &amp; Lifestyle Essentials
+                        Handcrafted Fashion & Lifestyle Essentials
                     </h1>
 
                     <p>
-                        Beautifully crafted slippers, bags, phone cases and
-                        lifestyle essentials made with quality, care and
-                        timeless African-inspired style.
+                        Discover beautifully crafted slippers, bags, phone
+                        cases and everyday essentials made with quality,
+                        comfort and care.
                     </p>
 
-                    <div class="hero-actions">
-
-                        <a
-                            href="#shop"
-                            class="btn btn-primary"
-                        >
-                            Shop now
-                        </a>
-
-                        <a
-                            href="#about"
-                            class="text-link"
-                        >
-                            Our story
-                            <span aria-hidden="true">→</span>
-                        </a>
-
-                    </div>
-
+                    <a href="shop.html" class="primary-button">
+                        Shop Now
+                        <span aria-hidden="true">→</span>
+                    </a>
                 </div>
 
-
-                <div
-                    class="hero-visual"
-                    aria-label="Lindaré fashion and lifestyle collection"
-                >
-
-                    <div class="hero-shape hero-shape-one"></div>
-
-                    <div class="hero-shape hero-shape-two"></div>
-
+                <div class="hero-image">
                     <img
-                        class="hero-main-image"
-                        src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=85"
-                        alt="Premium brown Lindaré handbag"
+                        src="./images/hero-banner.png"
+                        alt="Handmade slippers, Leather bag and floral phone case"
                     >
-
-                    <div class="hero-product-card hero-card-one">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=600&q=85"
-                            alt="Brown handcrafted slippers"
-                        >
-
-                    </div>
-
-                    <div class="hero-product-card hero-card-two">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=600&q=85"
-                            alt="Decorative phone case"
-                        >
-
-                    </div>
-
                 </div>
 
             </div>
-
         </section>
 
 
-        <!-- =====================================
-             SHOP BY CATEGORY
-        ====================================== -->
+        <!-- Benefits -->
+        <section class="benefits">
+            <div class="container benefits-grid">
 
-        <section class="section" id="shop">
+                <article class="benefit">
+                    <span class="benefit-icon">✦</span>
+                    <div>
+                        <h3>Premium Quality</h3>
+                        <p>Made with carefully selected materials.</p>
+                    </div>
+                </article>
 
+                <article class="benefit">
+                    <span class="benefit-icon">♡</span>
+                    <div>
+                        <h3>Handmade</h3>
+                        <p>Crafted with skill, love and care.</p>
+                    </div>
+                </article>
+
+                <article class="benefit">
+                    <span class="benefit-icon">◇</span>
+                    <div>
+                        <h3>Affordable Prices</h3>
+                        <p>Beautiful products at fair prices.</p>
+                    </div>
+                </article>
+
+                <article class="benefit">
+                    <span class="benefit-icon">▣</span>
+                    <div>
+                        <h3>Fast Delivery</h3>
+                        <p>Quick and reliable order delivery.</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- Categories -->
+        <section class="section">
             <div class="container">
 
-                <div class="section-heading centered">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Explore our products</p>
+                        <h2>Shop by Category</h2>
+                    </div>
 
-                    <span class="eyebrow">
-                        Discover your style
-                    </span>
-
-                    <h2>Shop by category</h2>
-
-                    <p>
-                        Thoughtfully designed pieces made to complement
-                        your everyday life.
-                    </p>
-
+                    <a href="shop.html" class="text-link">
+                        View all →
+                    </a>
                 </div>
-
 
                 <div class="category-grid">
 
-                    <a
-                        class="category-card"
-                        href="#featured-products"
-                    >
-
+                    <a href="shop.html?category=slippers" class="category-card">
                         <img
-                            src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=900&q=85"
-                            alt="Lindaré slippers collection"
+                            src="./images/black-platform.png"
+                            alt="Handmade slippers"
                         >
-
-                        <div class="category-overlay">
-
-                            <span>Slippers</span>
-
-                            <small>Shop collection</small>
-
-                        </div>
-
+                        <h3>Slippers</h3>
                     </a>
 
-
-                    <a
-                        class="category-card"
-                        href="#featured-products"
-                    >
-
+                    <a href="shop.html?category=bags" class="category-card">
                         <img
-                            src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=85"
-                            alt="Lindaré bags collection"
+                            src="./images/category-yellow-bag.png.jpeg"
+                            alt="Handmade bags"
                         >
-
-                        <div class="category-overlay">
-
-                            <span>Bags</span>
-
-                            <small>Shop collection</small>
-
-                        </div>
-
+                        <h3>Bags</h3>
                     </a>
 
-
-                    <a
-                        class="category-card"
-                        href="#featured-products"
-                    >
-
+                    <a href="shop.html?category=cases" class="category-card">
                         <img
-                            src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=900&q=85"
-                            alt="Lindaré phone cases collection"
+                            src="./images/category-leopard-phone-case.png"
+                            alt="Decorative phone cases"
                         >
-
-                        <div class="category-overlay">
-
-                            <span>Phone Cases</span>
-
-                            <small>Shop collection</small>
-
-                        </div>
-
+                        <h3>Phone Cases</h3>
                     </a>
 
-
-                    <a
-                        class="category-card"
-                        href="#featured-products"
-                    >
-
+                    <a href="shop.html?category=accessories" class="category-card">
                         <img
-                            src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=85"
-                            alt="Lindaré lifestyle essentials"
+                            src="./images/bracelet3.png"
+                            alt="Fashion accessories"
                         >
+                        <h3>Accessories</h3>
+                    </a>
 
-                        <div class="category-overlay">
+                    <a href="shop.html?category=essentials" class="category-card">
+                        <img
+                            src="./images/lipgloss.png"
+                            alt="Beauty essentials"
+                        >
+                        <h3>Essentials</h3>
+                    </a>
 
-                            <span>Essentials</span>
-
-                            <small>Shop collection</small>
-
-                        </div>
-
+                    <a href="shop.html?category=fragrances" class="category-card">
+                        <img
+                            src="./images/diffuser image.jpeg"
+                            alt="Self care"
+                        >
+                        <h3>Fragrances</h3>
                     </a>
 
                 </div>
-
             </div>
-
         </section>
 
 
-        <!-- =====================================
-             FEATURED PRODUCTS
-        ====================================== -->
-
-        <section
-            class="section section-soft"
-            id="featured-products"
-        >
-
+        <!-- Featured Products -->
+        <section class="section featured-section">
             <div class="container">
 
-                <div class="section-heading heading-row">
-
+                <div class="section-heading">
                     <div>
-
-                        <span class="eyebrow">
-                            Curated favourites
-                        </span>
-
-                        <h2>Featured products</h2>
-
+                        <p class="eyebrow">Customer favourites</p>
+                        <h2>Featured Collection</h2>
                     </div>
 
-                    <a href="#" class="text-link">
-
-                        View all
-
-                        <span aria-hidden="true">→</span>
-
+                    <a href="shop.html" class="text-link">
+                        Shop all →
                     </a>
-
                 </div>
-
 
                 <div class="product-grid">
 
-                    <!-- Product One -->
-
                     <article class="product-card">
-
-                        <div class="product-media">
-
-                            <span class="product-badge">
-                                Popular
-                            </span>
-
-                            <button
-                                class="wishlist"
-                                type="button"
-                                aria-label="Add Brown Leather Slippers to wishlist"
-                            >
-                                ♡
-                            </button>
-
+                        <a href="product-details.html">
                             <img
-                                src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=900&q=85"
-                                alt="Brown leather slippers"
+                                src="./images/category-purple-slippers.png"
+                                alt="Purple leather slippers"
                             >
-
-                            <button
-                                class="quick-add"
-                                type="button"
-                            >
-                                Quick add
-                            </button>
-
-                        </div>
-
+                        </a>
 
                         <div class="product-info">
+                            <h3>
+                                <a href="product-details.html">
+                                    Leather Slippers
+                                </a>
+                            </h3>
 
-                            <div
-                                class="rating"
-                                aria-label="5 out of 5 stars"
+                            <p class="product-price">GHS 150</p>
+                            <p class="rating">★★★★★ <span>(24)</span></p>
+
+                            <button
+                                class="add-cart-button"
+                                type="button"
+                                data-name="Leather Slippers"
+                                data-price="150"
+                                data-image="./images/purple-slippers.png"
                             >
-                                ★★★★★
-                                <span>(24)</span>
-                            </div>
-
-                            <h3>Brown Leather Slippers</h3>
-
-                            <p class="price">GHS 160</p>
-
+                                Add to Cart
+                            </button>
                         </div>
-
                     </article>
 
 
-                    <!-- Product Two -->
-
                     <article class="product-card">
-
-                        <div class="product-media">
-
-                            <button
-                                class="wishlist"
-                                type="button"
-                                aria-label="Add Beige Handbag to wishlist"
-                            >
-                                ♡
-                            </button>
-
-                            <img
-                                src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=85"
-                                alt="Beige handbag"
-                            >
-
-                            <button
-                                class="quick-add"
-                                type="button"
-                            >
-                                Quick add
-                            </button>
-
-                        </div>
-
+                        <img
+                            src="./images/category-yellow-bag.png.jpeg"
+                            alt="Beige handmade handbag"
+                        >
 
                         <div class="product-info">
+                            <h3> Yellow Handbag</h3>
+                            <p class="product-price">GHS 290</p>
+                            <p class="rating">★★★★★ <span>(18)</span></p>
 
-                            <div
-                                class="rating"
-                                aria-label="5 out of 5 stars"
+                            <button
+                                class="add-cart-button"
+                                type="button"
+                                data-name="Yellow Handbag"
+                                data-price="290"
+                                data-image="./images/purple-bag.png"
                             >
-                                ★★★★★
-                                <span>(18)</span>
-                            </div>
-
-                            <h3>Beige Handbag</h3>
-
-                            <p class="price">GHS 290</p>
-
+                                Add to Cart
+                            </button>
                         </div>
-
                     </article>
 
 
-                    <!-- Product Three -->
-
                     <article class="product-card">
-
-                        <div class="product-media">
-
-                            <span class="product-badge">
-                                New
-                            </span>
-
-                            <button
-                                class="wishlist"
-                                type="button"
-                                aria-label="Add Floral Phone Case to wishlist"
-                            >
-                                ♡
-                            </button>
-
-                            <img
-                                src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=900&q=85"
-                                alt="Floral phone case"
-                            >
-
-                            <button
-                                class="quick-add"
-                                type="button"
-                            >
-                                Quick add
-                            </button>
-
-                        </div>
-
+                        <img
+                            src="./images/cherry-phone-case.png"
+                            alt="Love phone case"
+                        >
 
                         <div class="product-info">
-
-                            <div
-                                class="rating"
-                                aria-label="5 out of 5 stars"
-                            >
-                                ★★★★★
-                                <span>(31)</span>
-                            </div>
-
                             <h3>Floral Phone Case</h3>
+                            <p class="product-price">GHS 80</p>
+                            <p class="rating">★★★★★ <span>(31)</span></p>
 
-                            <p class="price">GHS 60</p>
-
+                            <button
+                                class="add-cart-button"
+                                type="button"
+                                data-name="Floral Phone Case"
+                                data-price="80"
+                                data-image="./images/floral-phone-case.png"
+                            >
+                                Add to Cart
+                            </button>
                         </div>
-
                     </article>
 
-
-                    <!-- Product Four -->
 
                     <article class="product-card">
-
-                        <div class="product-media">
-
-                            <button
-                                class="wishlist"
-                                type="button"
-                                aria-label="Add Mini Essentials Pouch to wishlist"
-                            >
-                                ♡
-                            </button>
-
-                            <img
-                                src="https://images.unsplash.com/photo-1559563458-527698bf5295?auto=format&fit=crop&w=900&q=85"
-                                alt="Mini essentials pouch"
-                            >
-
-                            <button
-                                class="quick-add"
-                                type="button"
-                            >
-                                Quick add
-                            </button>
-
-                        </div>
-
+                        <img
+                            src="./images/lipgloss.png"
+                            alt="Classy lipgloss"
+                        >
 
                         <div class="product-info">
+                            <h3>Classy Lip Gloss</h3>
+                            <p class="product-price">GHS 50</p>
+                            <p class="rating">★★★★★ <span>(11)</span></p>
 
-                            <div
-                                class="rating"
-                                aria-label="5 out of 5 stars"
+                            <button
+                                class="add-cart-button"
+                                type="button"
+                                data-name="Classy lipgloss"
+                                data-price="50"
+                                data-image="./images/lipgloss.png"
                             >
-                                ★★★★★
-                                <span>(10)</span>
-                            </div>
-
-                            <h3>Mini Essentials Pouch</h3>
-
-                            <p class="price">GHS 90</p>
-
+                                Add to Cart
+                            </button>
                         </div>
-
                     </article>
 
                 </div>
-
             </div>
-
         </section>
 
 
-        <!-- =====================================
-             SHOPPING BENEFITS
-        ====================================== -->
+        <!-- About -->
+        <section class="about-section" id="about">
+            <div class="container about-grid">
 
-        <section class="benefits">
-
-            <div class="container benefits-grid">
-
-                <article class="benefit-item">
-
-                    <span
-                        class="benefit-icon"
-                        aria-hidden="true"
+                <div class="about-image">
+                    <img
+                        src="./images/white-wine-slippers.png"
+                        alt="Handcrafted Lindaré fashion products"
                     >
-                        ✦
-                    </span>
+                </div>
 
-                    <div>
+                <div class="about-content">
+                    <p class="eyebrow">Our story</p>
+                    <h2>Made by hand. Designed for you.</h2>
 
-                        <h3>Premium quality</h3>
+                    <p>
+                        Lindaré celebrates creativity, comfort and everyday
+                        elegance through thoughtfully handcrafted products.
+                        Every piece is selected to help you express your
+                        personal style.
+                    </p>
 
-                        <p>Finest materials</p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="benefit-item">
-
-                    <span
-                        class="benefit-icon"
-                        aria-hidden="true"
-                    >
-                        ♢
-                    </span>
-
-                    <div>
-
-                        <h3>Handmade</h3>
-
-                        <p>Made with care</p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="benefit-item">
-
-                    <span
-                        class="benefit-icon"
-                        aria-hidden="true"
-                    >
-                        ⌁
-                    </span>
-
-                    <div>
-
-                        <h3>Affordable prices</h3>
-
-                        <p>Best value for you</p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="benefit-item">
-
-                    <span
-                        class="benefit-icon"
-                        aria-hidden="true"
-                    >
-                        ▱
-                    </span>
-
-                    <div>
-
-                        <h3>Fast delivery</h3>
-
-                        <p>Quick and reliable</p>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================
-             BEST SELLERS
-        ====================================== -->
-
-        <section class="section" id="about">
-
-            <div class="container">
-
-                <div class="section-heading heading-row">
-
-                    <div>
-
-                        <span class="eyebrow">
-                            Loved by our customers
-                        </span>
-
-                        <h2>Best sellers</h2>
-
-                    </div>
-
-                    <a href="#" class="text-link">
-
-                        View all
-
-                        <span aria-hidden="true">→</span>
-
+                    <a href="shop.html" class="secondary-button">
+                        Explore Collection
                     </a>
-
-                </div>
-
-
-                <div class="product-grid">
-
-                    <!-- Best Seller One -->
-
-                    <article class="product-card compact">
-
-                        <div class="product-media">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=900&q=85"
-                                alt="Woven slippers"
-                            >
-
-                            <button
-                                class="quick-add"
-                                type="button"
-                            >
-                                Quick add
-                            </button>
-
-                        </div>
-
-
-                        <div class="product-info">
-
-                            <div class="rating">
-
-                                ★★★★★
-
-                                <span>(30)</span>
-
-                            </div>
-
-                            <h3>Woven Slippers</h3>
-
-                            <p class="price">GHS 140</p>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Best Seller Two -->
-
-                    <article class="product-card compact">
-
-                        <div class="product-media">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=900&q=85"
-                                alt="Brown tote bag"
-                            >
-
-                            <button
-                                class="quick-add"
-                                type="button"
-                            >
-                                Quick add
-                            </button>
-
-                        </div>
-
-
-                        <div class="product-info">
-
-                            <div class="rating">
-
-                                ★★★★★
-
-                                <span>(16)</span>
-
-                            </div>
-
-                            <h3>Brown Tote Bag</h3>
-
-                            <p class="price">GHS 330</p>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Best Seller Three -->
-
-                    <article class="product-card compact">
-
-                        <div class="product-media">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=900&q=85"
-                                alt="Patterned phone case"
-                            >
-
-                            <button
-                                class="quick-add"
-                                type="button"
-                            >
-                                Quick add
-                            </button>
-
-                        </div>
-
-
-                        <div class="product-info">
-
-                            <div class="rating">
-
-                                ★★★★★
-
-                                <span>(27)</span>
-
-                            </div>
-
-                            <h3>Patterned Phone Case</h3>
-
-                            <p class="price">GHS 60</p>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Best Seller Four -->
-
-                    <article class="product-card compact">
-
-                        <div class="product-media">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=900&q=85"
-                                alt="Beaded bracelet"
-                            >
-
-                            <button
-                                class="quick-add"
-                                type="button"
-                            >
-                                Quick add
-                            </button>
-
-                        </div>
-
-
-                        <div class="product-info">
-
-                            <div class="rating">
-
-                                ★★★★★
-
-                                <span>(13)</span>
-
-                            </div>
-
-                            <h3>Beaded Bracelet</h3>
-
-                            <p class="price">GHS 60</p>
-
-                        </div>
-
-                    </article>
-
                 </div>
 
             </div>
-
         </section>
 
 
-        <!-- =====================================
-             TESTIMONIALS
-        ====================================== -->
-
-        <section class="section testimonials">
-
-            <div class="container">
-
-                <div class="section-heading centered">
-
-                    <span class="eyebrow">
-                        Real stories
-                    </span>
-
-                    <h2>What our customers say</h2>
-
-                </div>
-
-
-                <div class="testimonial-slider">
-
-                    <button
-                        class="slider-btn prev"
-                        type="button"
-                        aria-label="Previous testimonial"
-                    >
-                        ←
-                    </button>
-
-
-                    <div class="testimonial-track">
-
-                        <!-- Testimonial One -->
-
-                        <article class="testimonial-card active">
-
-                            <img
-                                src="https://i.pravatar.cc/160?img=47"
-                                alt="Ama Serwaa"
-                            >
-
-                            <div>
-
-                                <div
-                                    class="rating"
-                                    aria-label="5 out of 5 stars"
-                                >
-                                    ★★★★★
-                                </div>
-
-                                <p>
-                                    “The quality is amazing! I love my
-                                    slippers and the packaging felt so
-                                    thoughtful.”
-                                </p>
-
-                                <h3>Ama Serwaa</h3>
-
-                            </div>
-
-                        </article>
-
-
-                        <!-- Testimonial Two -->
-
-                        <article class="testimonial-card">
-
-                            <img
-                                src="https://i.pravatar.cc/160?img=12"
-                                alt="Kofi Mensah"
-                            >
-
-                            <div>
-
-                                <div
-                                    class="rating"
-                                    aria-label="5 out of 5 stars"
-                                >
-                                    ★★★★★
-                                </div>
-
-                                <p>
-                                    “Very neat work and fast delivery.
-                                    The bag looks even better in person.”
-                                </p>
-
-                                <h3>Kofi Mensah</h3>
-
-                            </div>
-
-                        </article>
-
-
-                        <!-- Testimonial Three -->
-
-                        <article class="testimonial-card">
-
-                            <img
-                                src="https://i.pravatar.cc/160?img=32"
-                                alt="Akosua Adjei"
-                            >
-
-                            <div>
-
-                                <div
-                                    class="rating"
-                                    aria-label="5 out of 5 stars"
-                                >
-                                    ★★★★★
-                                </div>
-
-                                <p>
-                                    “My go-to store for beautiful
-                                    handcrafted accessories. I will
-                                    definitely order again.”
-                                </p>
-
-                                <h3>Akosua Adjei</h3>
-
-                            </div>
-
-                        </article>
-
-                    </div>
-
-
-                    <button
-                        class="slider-btn next"
-                        type="button"
-                        aria-label="Next testimonial"
-                    >
-                        →
-                    </button>
-
-                </div>
-
-
-                <div
-                    class="slider-dots"
-                    aria-label="Testimonial navigation"
-                ></div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================
-             NEWSLETTER
-        ====================================== -->
-
+        <!-- Newsletter -->
         <section class="newsletter">
+            <div class="container newsletter-content">
 
-            <div class="container newsletter-inner">
-
-                <div class="newsletter-copy">
-
-                    <span
-                        class="newsletter-icon"
-                        aria-hidden="true"
-                    >
-                        ✉
-                    </span>
-
-                    <div>
-
-                        <span class="eyebrow">
-                            Join our community
-                        </span>
-
-                        <h2>
-                            Get offers, new arrivals and style inspiration.
-                        </h2>
-
-                    </div>
-
+                <div>
+                    <p class="eyebrow">Join our community</p>
+                    <h2>Get new arrivals and offers</h2>
                 </div>
 
-
-                <form class="newsletter-form">
-
-                    <label
-                        class="sr-only"
-                        for="newsletter-email"
-                    >
-                        Email address
-                    </label>
-
+                <form class="newsletter-form" id="newsletterForm">
                     <input
-                        id="newsletter-email"
-                        name="email"
                         type="email"
+                        id="newsletterEmail"
                         placeholder="Enter your email address"
-                        autocomplete="email"
                         required
                     >
 
-                    <button
-                        class="btn btn-primary"
-                        type="submit"
-                    >
+                    <button type="submit" class="primary-button">
                         Subscribe
                     </button>
-
                 </form>
 
             </div>
-
         </section>
 
     </main>
 
 
-    <!-- =====================================
-         FOOTER
-    ====================================== -->
-
-    <footer class="site-footer" id="contact">
-
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container footer-grid">
 
-            <div class="footer-brand">
-
-                <a
-                    href="#home"
-                    class="brand light"
-                    aria-label="Return to homepage"
-                >
+            <div>
+                <a href="index.html" class="footer-logo">
                     Lindaré
                 </a>
 
                 <p>
-                    Handcrafted fashion and lifestyle essentials made
-                    with care in Ghana.
+                    Handmade fashion and lifestyle essentials created with
+                    quality and care.
                 </p>
-
             </div>
 
+            <div>
+              <h3>Quick Links</h3>
+              <a href="./index.html">Home</a>
+              <a href="./pages/shop.html">Shop</a>
+              <a href="#about">About</a>
+             <a href="./pages/contact.html">Contact</a>
+             </div>
 
-            <div class="footer-column">
-
-                <h3>Quick links</h3>
-
-                <a href="#home">Home</a>
-
-                <a href="#shop">Shop</a>
-
-                <a href="#about">About</a>
-
-                <a href="#contact">Contact</a>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h3>Customer service</h3>
-
+            <div>
+                <h3>Customer Care</h3>
                 <a href="#">FAQs</a>
-
-                <a href="#">Shipping &amp; delivery</a>
-
-                <a href="#">Returns &amp; refunds</a>
-
-                <a href="#">Privacy policy</a>
-
-                <a href="#">Terms &amp; conditions</a>
-
+                <a href="#">Shipping & Delivery</a>
+                <a href="#">Returns & Refunds</a>
+                <a href="#">Privacy Policy</a>
             </div>
 
-
-            <div class="footer-column">
-
-                <h3>Contact us</h3>
-
-                <a href="tel:+233001234567">
-                    +233 00 123 4567
-                </a>
-
-                <a href="mailto:hello@lindare.com">
-                    hello@lindare.com
-                </a>
-
-                <span>Accra, Ghana</span>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h3>Follow us</h3>
-
-                <div class="social-links">
-
-                    <a
-                        href="#"
-                        aria-label="Follow Lindaré on Instagram"
-                    >
-                        IG
-                    </a>
-
-                    <a
-                        href="#"
-                        aria-label="Follow Lindaré on Facebook"
-                    >
-                        FB
-                    </a>
-
-                    <a
-                        href="#"
-                        aria-label="Follow Lindaré on TikTok"
-                    >
-                        TT
-                    </a>
-
-                    <a
-                        href="#"
-                        aria-label="Contact Lindaré on WhatsApp"
-                    >
-                        WA
-                    </a>
-
-                </div>
-
+            <div>
+                <h3>Contact Us</h3>
+                <p>+233 50 123 4567</p>
+                <p>hello@lindare.com</p>
+                <p>Accra, Ghana</p>
             </div>
 
         </div>
 
-
-        <div class="container footer-bottom">
-
-            <p>
-                &copy; 2026 Lindaré. All rights reserved.
-            </p>
-
+        <div class="footer-bottom">
+            <p>&copy; 2026 Lindaré. All rights reserved.</p>
         </div>
-
     </footer>
 
 
-    <!-- Notification Message -->
-
-    <div
-        class="toast"
-        role="status"
-        aria-live="polite"
-    ></div>
-
-
-    <!-- Main JavaScript -->
+    <!-- Notification message -->
+    <div class="notification" id="notification" aria-live="polite"></div>
 
     <script src="./src/script.js"></script>
-
 </body>
 </html>
