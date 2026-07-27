@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Review your Lindaré shopping cart and complete your order."
+    >
+
+    <title>Cart & Checkout | Lindaré</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../src/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+
+            <a href="../index.html" class="logo">Lindaré</a>
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+            <nav class="navigation" id="navigation">
+                <a href="../index.html">Home</a>
+                <a href="./shop.html">Shop</a>
+                <a href="../index.html#about">About</a>
+                <a href="./contact.html">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="./login.html" class="icon-link" aria-label="Login">
+                    &#128100;
+                </a>
+
+                <a href="./cart.html" class="cart-link" aria-label="Cart">
+                    &#128717;
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main class="cart-page">
+
+        <section class="cart-heading">
+            <div class="container">
+                <p class="eyebrow">Your order</p>
+                <h1>Shopping Cart</h1>
+
+                <a href="./shop.html" class="text-link">
+                    ← Continue Shopping
+                </a>
+            </div>
+        </section>
+
+
+        <section class="cart-section">
+            <div class="container cart-layout">
+
+                <div class="cart-items-area">
+
+                    <div class="cart-table-heading">
+                        <span>Product</span>
+                        <span>Price</span>
+                        <span>Quantity</span>
+                        <span>Total</span>
+                    </div>
+
+                    <div id="cartItems"></div>
+
+
+                    <div class="empty-cart" id="emptyCart">
+                        <h2>Your cart is empty</h2>
+
+                        <p>
+                            Browse our collection and add something you love.
+                        </p>
+
+                        <a href="./shop.html" class="primary-button">
+                            Start Shopping
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <aside class="order-summary">
+
+                    <h2>Order Summary</h2>
+
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <strong id="cartSubtotal">GHS 0.00</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Delivery</span>
+                        <strong id="deliveryFee">GHS 0.00</strong>
+                    </div>
+
+                    <div class="summary-row summary-total">
+                        <span>Total</span>
+                        <strong id="cartTotal">GHS 0.00</strong>
+                    </div>
+
+
+                    <div class="promo-code">
+                        <label for="promoCode">Promo Code</label>
+
+                        <div>
+                            <input
+                                type="text"
+                                id="promoCode"
+                                placeholder="Enter code"
+                            >
+
+                            <button type="button" id="applyPromo">
+                                Apply
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="primary-button checkout-button"
+                        id="checkoutButton"
+                    >
+                        Proceed to Checkout
+                    </button>
+
+                    <p class="secure-checkout">
+                        Secure checkout and reliable delivery.
+                    </p>
+
+                </aside>
+
+            </div>
+        </section>
+
+
+        <section class="checkout-section" id="checkoutSection">
+
+            <div class="container checkout-container">
+
+                <div class="checkout-heading">
+                    <p class="eyebrow">Complete your order</p>
+                    <h2>Checkout Details</h2>
+                </div>
+
+                <form class="checkout-form" id="checkoutForm">
+
+                    <div class="checkout-fields">
+
+                        <div class="form-group">
+                            <label for="checkoutName">Full Name</label>
+
+                            <input
+                                type="text"
+                                id="checkoutName"
+                                placeholder="Enter your full name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="checkoutPhone">Phone Number</label>
+
+                            <input
+                                type="tel"
+                                id="checkoutPhone"
+                                placeholder="+233..."
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group checkout-full">
+                            <label for="checkoutEmail">Email Address</label>
+
+                            <input
+                                type="email"
+                                id="checkoutEmail"
+                                placeholder="name@example.com"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group checkout-full">
+                            <label for="checkoutAddress">Delivery Address</label>
+
+                            <input
+                                type="text"
+                                id="checkoutAddress"
+                                placeholder="Enter your delivery address"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="checkoutCity">City</label>
+
+                            <input
+                                type="text"
+                                id="checkoutCity"
+                                placeholder="Accra"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="paymentMethod">Payment Method</label>
+
+                            <select id="paymentMethod" required>
+                                <option value="">Select payment method</option>
+                                <option value="momo">Mobile Money</option>
+                                <option value="card">Debit or Credit Card</option>
+                                <option value="delivery">Pay on Delivery</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+
+                    <p
+                        class="form-message"
+                        id="checkoutMessage"
+                        aria-live="polite"
+                    ></p>
+
+
+                    <button type="submit" class="primary-button">
+                        Confirm Order
+                    </button>
+
+                </form>
+
+            </div>
+        </section>
+
+
+        <section class="order-success" id="orderSuccess">
+
+            <div class="order-success-card">
+                <span class="success-icon">✓</span>
+
+                <h2>Order Confirmed</h2>
+
+                <p>
+                    Thank you for shopping with Lindaré. Your order has
+                    been received successfully.
+                </p>
+
+                <a href="./shop.html" class="primary-button">
+                    Continue Shopping
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+        <div class="container footer-grid">
+
+            <div>
+                <a href="../index.html" class="footer-logo">Lindaré</a>
+
+                <p>
+                    Fashion and lifestyle essentials selected with
+                    quality, comfort and care.
+                </p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <a href="../index.html">Home</a>
+                <a href="./shop.html">Shop</a>
+                <a href="../index.html#about">About</a>
+                <a href="./contact.html">Contact</a>
+            </div>
+
+            <div>
+                <h3>Customer Care</h3>
+                <a href="#">FAQs</a>
+                <a href="#">Shipping & Delivery</a>
+                <a href="#">Returns & Refunds</a>
+            </div>
+
+            <div>
+                <h3>Contact Us</h3>
+                <p>+233 50 123 4567</p>
+                <p>hello@lindare.com</p>
+                <p>Accra, Ghana</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Lindaré. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <div
+        class="notification"
+        id="notification"
+        aria-live="polite"
+    ></div>
+
+    <script src="../src/script.js"></script>
+</body>
+</html>
