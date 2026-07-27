@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="View product details for Lindaré."
+    >
+
+    <title>Product Details | Lindaré</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../src/style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="container nav-container">
+
+<a href="../index.html" class="logo">Lindaré</a>
+
+<button
+class="menu-button"
+id="menuButton"
+type="button"
+aria-label="Menu"
+>
+☰
+</button>
+
+<nav class="navigation" id="navigation">
+
+<a href="../index.html">Home</a>
+
+<a href="./shop.html">Shop</a>
+
+<a href="../index.html#about">About</a>
+
+<a href="./contact.html">Contact</a>
+
+</nav>
+
+<div class="nav-actions">
+
+<a href="./login.html" class="icon-link">
+&#128100;
+</a>
+
+<a href="./cart.html" class="cart-link">
+
+&#128717;
+
+<span id="cartCount" class="cart-count">0</span>
+
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+<main>
+
+<section class="product-details-section">
+
+<div class="container product-layout">
+
+<div class="product-gallery">
+
+<div class="main-product-image">
+
+<img
+id="mainProductImage"
+src="../images/black-platform.png"
+alt="Platform Slippers"
+>
+
+</div>
+
+<div class="thumbnail-images">
+
+<img
+src="../images/coffee-slippers.png"
+class="thumbnail active-thumb"
+>
+
+<img
+src="../images/lip-gloss2.png"
+class="thumbnail"
+>
+
+<img
+src="../images/single-glasses2.png"
+class="thumbnail"
+>
+
+<img
+src="../images/purple-bag.png"
+class="thumbnail"
+>
+
+</div>
+
+</div>
+
+<div class="product-details">
+
+<p class="eyebrow">Lindaré Collection</p>
+
+<h1>Premium Leather Slippers</h1>
+
+<p class="rating">
+
+★★★★★
+
+<span>(24 Reviews)</span>
+
+</p>
+
+<h2 class="product-price" id="productPrice">
+    GHS 150
+</h2>
+
+<p class="product-description">
+
+Comfortable handcrafted leather slippers made
+for everyday elegance and long-lasting comfort.
+
+</p>
+
+<div class="product-option">
+
+<h3>Colour</h3>
+
+<div class="colour-options">
+
+<button class="colour brown active-colour"></button>
+
+<button class="colour black"></button>
+
+<button class="colour cream"></button>
+
+</div>
+
+</div>
+
+<div class="product-option">
+
+<h3>Size</h3>
+
+<div class="size-options">
+
+<button>38</button>
+
+<button>39</button>
+
+<button class="active-size">40</button>
+
+<button>41</button>
+
+<button>42</button>
+
+</div>
+
+</div>
+
+<div class="quantity-box">
+
+<button
+type="button"
+id="decreaseQty"
+>
+-
+</button>
+
+<span id="productQuantity">
+1
+</span>
+
+<button
+type="button"
+id="increaseQty"
+>
++
+</button>
+
+</div>
+
+<div class="product-buttons">
+
+<button
+
+class="primary-button"
+
+id="addToCart"
+
+data-name="Premium Leather Slippers"
+
+data-price="150"
+
+data-image="../images/woven-slippers.png"
+
+>
+
+Add to Cart
+
+</button>
+
+<a
+href="./cart.html"
+class="secondary-button"
+>
+
+Buy Now
+
+</a>
+
+</div>
+
+<div class="product-features">
+
+<h3>Features</h3>
+
+<ul>
+
+<li>Premium leather</li>
+
+<li>Lightweight design</li>
+
+<li>Comfortable sole</li>
+
+<li>Hand finished</li>
+
+<li>Made in Ghana</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="reviews-section">
+
+<div class="container">
+
+<h2>Customer Reviews</h2>
+
+<div class="review-card">
+
+<h4>Akosua Mensah</h4>
+
+<p>★★★★★</p>
+
+<p>
+
+Excellent quality.
+Very comfortable and exactly as shown.
+
+</p>
+
+</div>
+
+<div class="review-card">
+
+<h4>Linda Owusu</h4>
+
+<p>★★★★★</p>
+
+<p>
+
+Beautiful craftsmanship.
+Will definitely purchase again.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="related-products">
+
+<div class="container">
+
+<h2>You May Also Like</h2>
+
+<div class="product-grid">
+
+<!-- Reuse the same product cards from shop.html -->
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+
+<div class="container footer-grid">
+
+<div>
+
+<a
+href="../index.html"
+class="footer-logo"
+>
+
+Lindaré
+
+</a>
+
+<p>
+
+Fashion and lifestyle essentials selected
+with quality and care.
+
+</p>
+
+</div>
+
+<div>
+
+<h3>Quick Links</h3>
+
+<a href="../index.html">Home</a>
+
+<a href="./shop.html">Shop</a>
+
+<a href="../index.html#about">About</a>
+
+<a href="./contact.html">Contact</a>
+
+</div>
+
+<div>
+
+<h3>Customer Care</h3>
+
+<a href="#">FAQs</a>
+
+<a href="#">Shipping</a>
+
+<a href="#">Returns</a>
+
+</div>
+
+<div>
+
+<h3>Contact</h3>
+
+<p>+233 50 123 4567</p>
+
+<p>hello@lindare.com</p>
+
+<p>Accra, Ghana</p>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+
+© 2026 Lindaré.
+All rights reserved.
+
+</p>
+
+</div>
+
+</footer>
+
+<div
+id="notification"
+class="notification"
+></div>
+
+<script src="../src/script.js"></script>
+
+</body>
+</html>
