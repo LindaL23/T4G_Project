@@ -311,3 +311,305 @@ if (categoryFromUrl) {
 }
 
 displayShopProducts();
+
+// CART PAGE
+const cartItems = document.getElementById("cartItems");
+const emptyCart = document.getElementById("emptyCart");
+const cartSubtotal = document.getElementById("cartSubtotal");
+const deliveryFee = document.getElementById("deliveryFee");
+const cartTotal = document.getElementById("cartTotal");
+const checkoutButton = document.getElementById("checkoutButton");
+const checkoutSection = document.getElementById("checkoutSection");
+const checkoutForm = document.getElementById("checkoutForm");
+const checkoutMessage = document.getElementById("checkoutMessage");
+const orderSuccess = document.getElementById("orderSuccess");
+const applyPromo = document.getElementById("applyPromo");
+const promoCode = document.getElementById("promoCode");
+
+let discount = 0;
+
+function saveCart() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+}
+
+function renderCart() {
+    if (!cartItems) return;
+
+    cartItems.innerHTML = "";
+
+    if (cart.length === 0) {
+        emptyCart.classList.add("show");
+        checkoutButton.disabled = true;
+    } else {
+        emptyCart.classList.remove("show");
+        checkoutButton.disabled = false;
+    }
+
+    cart.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+
+        cartItems.innerHTML += `
+            <article class="cart-item">
+                <div class="cart-product">
+                    <img src="${item.image}" alt="${item.name}">
+
+                    <div>
+                        <h3>${item.name}</h3>
+
+                        <button
+                            type="button"
+                            class="remove-item"
+                            data-index="${index}"
+                        >
+                            Remove
+                        </button>
+                    </div>
+                </div>
+
+                <p>GHS ${item.price.toFixed(2)}</p>
+
+                <div class="quantity-box">
+                    <button
+                        type="button"
+                        class="decrease-quantity"
+                        data-index="${index}"
+                    >
+                        −
+                    </button>
+
+                    <span>${item.quantity}</span>
+
+                    <button
+                        type="button"
+                        class="increase-quantity"
+                        data-index="${index}"
+                    >
+                        +
+                    </button>
+                </div>
+
+                <strong>GHS ${itemTotal.toFixed(2)}</strong>
+            </article>
+        `;
+    });
+
+    updateCartTotals();
+}
+
+function updateCartTotals() {
+    const subtotal = cart.reduce(
+        (total, item) => total + item.price * item.quantity,
+        0
+    );
+
+    const delivery = subtotal > 0 ? 30 : 0;
+    const total = Math.max(subtotal + delivery - discount, 0);
+
+    cartSubtotal.textContent = `GHS ${subtotal.toFixed(2)}`;
+    deliveryFee.textContent = `GHS ${delivery.toFixed(2)}`;
+    cartTotal.textContent = `GHS ${total.toFixed(2)}`;
+}
+
+if (cartItems) {
+    cartItems.addEventListener("click", event => {
+        const index = Number(event.target.dataset.index);
+
+        if (event.target.classList.contains("increase-quantity")) {
+            cart[index].quantity += 1;
+        }
+
+        if (event.target.classList.contains("decrease-quantity")) {
+            cart[index].quantity -= 1;
+
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+        }
+
+        if (event.target.classList.contains("remove-item")) {
+            cart.splice(index, 1);
+        }
+
+        saveCart();
+        renderCart();
+    });
+
+    renderCart();
+}
+
+
+// PROMO CODE
+if (applyPromo && promoCode) {
+    applyPromo.addEventListener("click", () => {
+        const code = promoCode.value.trim().toUpperCase();
+
+        if (code === "LINDARE10" && cart.length > 0) {
+            const subtotal = cart.reduce(
+                (total, item) => total + item.price * item.quantity,
+                0
+            );
+
+            discount = subtotal * 0.1;
+            updateCartTotals();
+            showNotification("10% discount applied.");
+        } else {
+            discount = 0;
+            updateCartTotals();
+            showNotification("Invalid promo code.");
+        }
+    });
+}
+
+
+// SHOW CHECKOUT
+if (checkoutButton && checkoutSection) {
+    checkoutButton.addEventListener("click", () => {
+        if (cart.length === 0) return;
+
+        checkoutSection.classList.add("active");
+
+        checkoutSection.scrollIntoView({
+            behavior: "smooth"
+        });
+    });
+}
+
+
+// COMPLETE ORDER
+if (checkoutForm && checkoutMessage) {
+    checkoutForm.addEventListener("submit", event => {
+        event.preventDefault();
+
+        if (cart.length === 0) {
+            checkoutMessage.textContent = "Your cart is empty.";
+            return;
+        }
+
+        cart = [];
+        discount = 0;
+
+        saveCart();
+        renderCart();
+        checkoutForm.reset();
+
+        checkoutSection.classList.remove("active");
+        orderSuccess.classList.add("active");
+
+        orderSuccess.scrollIntoView({
+            behavior: "smooth"
+        });
+    });
+}
+
+// PRODUCT DETAILS PAGE
+
+const mainProductImage = document.getElementById("mainProductImage");
+const thumbnails = document.querySelectorAll(".thumbnail");
+const sizeButtons = document.querySelectorAll(".size-options button");
+const colourButtons = document.querySelectorAll(".colour-options .colour");
+const productQuantity = document.getElementById("productQuantity");
+const increaseQty = document.getElementById("increaseQty");
+const decreaseQty = document.getElementById("decreaseQty");
+const productAddButton = document.getElementById("addToCart");
+
+const productPrice = document.getElementById("productPrice");
+const unitPrice = Number(productAddButton?.dataset.price || 0);
+
+let selectedQuantity = 1;
+
+function updateProductPrice() {
+    if (!productPrice) return;
+
+    const total = unitPrice * selectedQuantity;
+    productPrice.textContent = `GHS ${total.toFixed(2)}`;
+    updateProductPrice();
+}
+// IMAGE GALLERY
+thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener("click", () => {
+        if (!mainProductImage) return;
+
+        mainProductImage.src = thumbnail.src;
+
+        thumbnails.forEach(item =>
+            item.classList.remove("active-thumb")
+        );
+
+        thumbnail.classList.add("active-thumb");
+    });
+});
+
+
+// SIZE SELECTION
+sizeButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        sizeButtons.forEach(item =>
+            item.classList.remove("active-size")
+        );
+
+        button.classList.add("active-size");
+    });
+});
+
+
+// COLOUR SELECTION
+colourButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        colourButtons.forEach(item =>
+            item.classList.remove("active-colour")
+        );
+
+        button.classList.add("active-colour");
+    });
+});
+
+
+// QUANTITY
+if (increaseQty && productQuantity) {
+    increaseQty.addEventListener("click", () => {
+        selectedQuantity++;
+        productQuantity.textContent = selectedQuantity;
+        updateProductPrice();
+    });
+}
+
+if (decreaseQty && productQuantity) {
+    decreaseQty.addEventListener("click", () => {
+        if (selectedQuantity > 1) {
+            selectedQuantity--;
+            productQuantity.textContent = selectedQuantity;
+            updateProductPrice();
+        }
+    });
+}
+
+
+// ADD PRODUCT TO CART
+if (productAddButton) {
+    productAddButton.addEventListener("click", () => {
+        const product = {
+            name: productAddButton.dataset.name,
+            price: Number(productAddButton.dataset.price),
+            image: productAddButton.dataset.image,
+            quantity: selectedQuantity
+        };
+
+        const existingProduct = cart.find(
+            item => item.name === product.name
+        );
+
+        if (existingProduct) {
+            existingProduct.quantity += selectedQuantity;
+        } else {
+            cart.push(product);
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartCount();
+
+        showNotification(
+            `${selectedQuantity} item${selectedQuantity > 1 ? "s" : ""} added to cart.`
+        );
+    });
+}
