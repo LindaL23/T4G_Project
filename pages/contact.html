@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Contact Lindaré for product enquiries, orders and customer support."
+    >
+
+    <title>Contact Us | Lindaré</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../src/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+
+            <a href="../index.html" class="logo">Lindaré</a>
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+            <nav class="navigation" id="navigation">
+                <a href="../index.html">Home</a>
+                <a href="./shop.html">Shop</a>
+                <a href="../index.html#about">About</a>
+                <a href="./contact.html" class="active">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="./login.html" class="icon-link" aria-label="Login">
+                    &#128100;
+                </a>
+
+                <a href="./cart.html" class="cart-link" aria-label="Shopping cart">
+                    &#128717;
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="contact-hero">
+            <div class="container contact-hero-content">
+
+                <div>
+                    <p class="eyebrow">Get in touch</p>
+
+                    <h1>We would love to hear from you.</h1>
+
+                    <p>
+                        Contact us for product enquiries, order assistance,
+                        delivery information or general customer support.
+                    </p>
+                </div>
+
+                <img
+                    src="../images/contact-image.png"
+                    alt="Lindaré fashion and lifestyle products"
+                >
+
+            </div>
+        </section>
+
+
+        <section class="contact-section">
+            <div class="container contact-layout">
+
+                <div class="contact-info">
+
+                    <p class="eyebrow">Contact information</p>
+                    <h2>How can we help?</h2>
+
+                    <p class="contact-intro">
+                        Complete the form or contact us directly using any
+                        of the details below.
+                    </p>
+
+
+                    <div class="contact-detail">
+                        <span>☎</span>
+
+                        <div>
+                            <h3>Phone</h3>
+                            <a href="tel:+233501234567">
+                                +233 50 123 4567
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="contact-detail">
+                        <span>✉</span>
+
+                        <div>
+                            <h3>Email</h3>
+                            <a href="mailto:hello@lindare.com">
+                                hello@lindare.com
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="contact-detail">
+                        <span>⌖</span>
+
+                        <div>
+                            <h3>Location</h3>
+                            <p>Accra, Ghana</p>
+                        </div>
+                    </div>
+
+
+                    <div class="contact-detail">
+                        <span>◷</span>
+
+                        <div>
+                            <h3>Business Hours</h3>
+                            <p>Monday – Saturday: 9:00 AM – 6:00 PM</p>
+                        </div>
+                    </div>
+
+
+                    <div class="contact-socials">
+                        <h3>Follow Us</h3>
+
+                        <div>
+                            <a href="#" aria-label="Instagram">Instagram</a>
+                            <a href="#" aria-label="TikTok">TikTok</a>
+                            <a href="#" aria-label="Facebook">Facebook</a>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <form class="contact-form" id="contactForm">
+
+                    <div class="contact-form-heading">
+                        <p class="eyebrow">Send a message</p>
+                        <h2>Contact Us</h2>
+                    </div>
+
+
+                    <div class="contact-form-row">
+
+                        <div class="form-group">
+                            <label for="contactName">Full Name</label>
+
+                            <input
+                                type="text"
+                                id="contactName"
+                                placeholder="Enter your full name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactEmail">Email Address</label>
+
+                            <input
+                                type="email"
+                                id="contactEmail"
+                                placeholder="name@example.com"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-form-row">
+
+                        <div class="form-group">
+                            <label for="contactPhone">Phone Number</label>
+
+                            <input
+                                type="tel"
+                                id="contactPhone"
+                                placeholder="+233..."
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactSubject">Subject</label>
+
+                            <select id="contactSubject" required>
+                                <option value="">Select a subject</option>
+                                <option value="product">Product Enquiry</option>
+                                <option value="order">Order Assistance</option>
+                                <option value="delivery">Delivery</option>
+                                <option value="returns">Returns</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="contactMessage">Message</label>
+
+                        <textarea
+                            id="contactMessage"
+                            rows="6"
+                            placeholder="How can we help you?"
+                            required
+                        ></textarea>
+                    </div>
+
+
+                    <p
+                        class="form-message"
+                        id="contactFormMessage"
+                        aria-live="polite"
+                    ></p>
+
+
+                    <button type="submit" class="primary-button">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+        </section>
+
+
+        <section class="contact-support">
+            <div class="container contact-support-grid">
+
+                <article>
+                    <span>◇</span>
+                    <h3>Product Support</h3>
+                    <p>
+                        Ask questions about sizes, colours and product
+                        availability.
+                    </p>
+                </article>
+
+                <article>
+                    <span>▣</span>
+                    <h3>Order Support</h3>
+                    <p>
+                        Get assistance with your order, payment or delivery.
+                    </p>
+                </article>
+
+                <article>
+                    <span>♡</span>
+                    <h3>Customer Care</h3>
+                    <p>
+                        We are available to make your shopping experience easier.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+        <div class="container footer-grid">
+
+            <div>
+                <a href="../index.html" class="footer-logo">Lindaré</a>
+
+                <p>
+                    Fashion and lifestyle essentials selected with
+                    quality, comfort and care.
+                </p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <a href="../index.html">Home</a>
+                <a href="./shop.html">Shop</a>
+                <a href="../index.html#about">About</a>
+                <a href="./contact.html">Contact</a>
+            </div>
+
+            <div>
+                <h3>Customer Care</h3>
+                <a href="#">FAQs</a>
+                <a href="#">Shipping & Delivery</a>
+                <a href="#">Returns & Refunds</a>
+            </div>
+
+            <div>
+                <h3>Contact Us</h3>
+                <p>+233 50 123 4567</p>
+                <p>hello@lindare.com</p>
+                <p>Accra, Ghana</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Lindaré. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <div
+        class="notification"
+        id="notification"
+        aria-live="polite"
+    ></div>
+
+    <script src="../src/script.js"></script>
+</body>
+</html>
