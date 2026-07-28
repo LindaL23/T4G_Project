@@ -2004,3 +2004,14 @@ h2 {
 
     transform:translateY(-5px);
 }
+
+.nav-actions i{
+    font-size:1.2rem;
+    color:#8B5E3C;
+    transition:0.3s ease;
+}
+
+.nav-actions a:hover i,
+.nav-actions button:hover i{
+    color:#5C3A21;
+}
