@@ -613,3 +613,35 @@ if (productAddButton) {
         );
     });
 }
+
+// CONTACT PAGE
+const contactForm = document.getElementById("contactForm");
+const contactFormMessage = document.getElementById("contactFormMessage");
+
+if (contactForm && contactFormMessage) {
+    contactForm.addEventListener("submit", event => {
+        event.preventDefault();
+
+        const name = document.getElementById("contactName").value.trim();
+        const email = document.getElementById("contactEmail").value.trim();
+        const subject = document.getElementById("contactSubject").value;
+        const message = document.getElementById("contactMessage").value.trim();
+
+        contactFormMessage.classList.remove("success");
+
+        if (!name || !email || !subject || !message) {
+            contactFormMessage.textContent =
+                "Please complete all required fields.";
+            return;
+        }
+
+        contactFormMessage.textContent =
+            "Your message has been sent successfully.";
+
+        contactFormMessage.classList.add("success");
+
+        showNotification("Message sent successfully!");
+
+        contactForm.reset();
+    });
+}
