@@ -1499,7 +1499,7 @@ h2 {
 }
 
 .thumbnail-images{
-    display:flex;
+    display:none;
     gap:15px;
 }
 
