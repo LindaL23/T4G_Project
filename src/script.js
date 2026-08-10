@@ -312,6 +312,35 @@ if (categoryFromUrl) {
 
 displayShopProducts();
 
+// OPEN SELECTED PRODUCT
+document.querySelectorAll(".shop-product").forEach(product => {
+    const links = product.querySelectorAll(
+        'a[href="./product-details.html"]'
+    );
+
+    links.forEach(link => {
+        link.addEventListener("click", event => {
+            event.preventDefault();
+
+            const image = product.querySelector("img");
+
+            const selectedProduct = {
+                name: product.dataset.name,
+                price: Number(product.dataset.price),
+                category: product.dataset.category,
+                image: image ? image.getAttribute("src") : ""
+            };
+
+            localStorage.setItem(
+                "selectedProduct",
+                JSON.stringify(selectedProduct)
+            );
+
+            window.location.href = "./product-details.html";
+        });
+    });
+});
+
 // CART PAGE
 const cartItems = document.getElementById("cartItems");
 const emptyCart = document.getElementById("emptyCart");
@@ -503,66 +532,58 @@ if (checkoutForm && checkoutMessage) {
 }
 
 // PRODUCT DETAILS PAGE
-
 const mainProductImage = document.getElementById("mainProductImage");
-const thumbnails = document.querySelectorAll(".thumbnail");
-const sizeButtons = document.querySelectorAll(".size-options button");
-const colourButtons = document.querySelectorAll(".colour-options .colour");
+const productName = document.getElementById("productName");
+const productPrice = document.getElementById("productPrice");
+const productDescription = document.getElementById("productDescription");
 const productQuantity = document.getElementById("productQuantity");
 const increaseQty = document.getElementById("increaseQty");
 const decreaseQty = document.getElementById("decreaseQty");
 const productAddButton = document.getElementById("addToCart");
+const sizeSection = document.getElementById("sizeSection");
 
-const productPrice = document.getElementById("productPrice");
-const unitPrice = Number(productAddButton?.dataset.price || 0);
+const sizeButtons = document.querySelectorAll(".size-options button");
+const colourButtons = document.querySelectorAll(".colour-options .colour");
+
+const selectedProduct =
+    JSON.parse(localStorage.getItem("selectedProduct"));
 
 let selectedQuantity = 1;
+let unitPrice = selectedProduct?.price || 0;
 
+
+
+// LOAD SELECTED PRODUCT
+if (selectedProduct && mainProductImage) {
+    mainProductImage.src = selectedProduct.image;
+    mainProductImage.alt = selectedProduct.name;
+
+    productName.textContent = selectedProduct.name;
+
+    productAddButton.dataset.name = selectedProduct.name;
+    productAddButton.dataset.price = selectedProduct.price;
+    productAddButton.dataset.image = selectedProduct.image;
+
+    if (productDescription) {
+        productDescription.textContent =
+            `${selectedProduct.name} from the Lindaré collection, selected for style, quality and everyday use.`;
+    }
+    if (sizeSection){
+        sizeSection.style.display =
+          selectedProduct.category ==="slippers" ? "block" : "none";
+    }
+}
+
+
+// PRICE
 function updateProductPrice() {
     if (!productPrice) return;
 
     const total = unitPrice * selectedQuantity;
     productPrice.textContent = `GHS ${total.toFixed(2)}`;
-    updateProductPrice();
 }
-// IMAGE GALLERY
-thumbnails.forEach(thumbnail => {
-    thumbnail.addEventListener("click", () => {
-        if (!mainProductImage) return;
 
-        mainProductImage.src = thumbnail.src;
-
-        thumbnails.forEach(item =>
-            item.classList.remove("active-thumb")
-        );
-
-        thumbnail.classList.add("active-thumb");
-    });
-});
-
-
-// SIZE SELECTION
-sizeButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        sizeButtons.forEach(item =>
-            item.classList.remove("active-size")
-        );
-
-        button.classList.add("active-size");
-    });
-});
-
-
-// COLOUR SELECTION
-colourButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        colourButtons.forEach(item =>
-            item.classList.remove("active-colour")
-        );
-
-        button.classList.add("active-colour");
-    });
-});
+updateProductPrice();
 
 
 // QUANTITY
@@ -585,24 +606,46 @@ if (decreaseQty && productQuantity) {
 }
 
 
-// ADD PRODUCT TO CART
-if (productAddButton) {
-    productAddButton.addEventListener("click", () => {
-        const product = {
-            name: productAddButton.dataset.name,
-            price: Number(productAddButton.dataset.price),
-            image: productAddButton.dataset.image,
-            quantity: selectedQuantity
-        };
+// SIZE
+sizeButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        sizeButtons.forEach(item =>
+            item.classList.remove("active-size")
+        );
 
+        button.classList.add("active-size");
+    });
+});
+
+
+// COLOUR
+colourButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        colourButtons.forEach(item =>
+            item.classList.remove("active-colour")
+        );
+
+        button.classList.add("active-colour");
+    });
+});
+
+
+// ADD TO CART
+if (productAddButton && selectedProduct) {
+    productAddButton.addEventListener("click", () => {
         const existingProduct = cart.find(
-            item => item.name === product.name
+            item => item.name === selectedProduct.name
         );
 
         if (existingProduct) {
             existingProduct.quantity += selectedQuantity;
         } else {
-            cart.push(product);
+            cart.push({
+                name: selectedProduct.name,
+                price: selectedProduct.price,
+                image: selectedProduct.image,
+                quantity: selectedQuantity
+            });
         }
 
         localStorage.setItem("cart", JSON.stringify(cart));
@@ -613,6 +656,7 @@ if (productAddButton) {
         );
     });
 }
+
 
 // CONTACT PAGE
 const contactForm = document.getElementById("contactForm");
