@@ -2028,50 +2028,65 @@ body {
 
 @media (max-width: 768px) {
 
-    /* HEADER */
+   /* MOBILE HEADER FIX */
+@media (max-width: 768px) {
+
     .nav-container {
-        min-height: 68px;
-        display: grid;
-        grid-template-columns: auto 1fr auto auto;
+        min-height: 72px;
+        display: flex;
         align-items: center;
-        gap: 10px;
-        flex-wrap: unset;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        gap: 12px;
     }
 
     .logo {
-        grid-column: 1;
-        font-size: 1.65rem;
+        margin-right: auto;
+        font-size: 1.7rem;
         white-space: nowrap;
     }
 
     .nav-actions {
-        grid-column: 3;
-        margin-left: 0;
-        gap: 12px;
-        order: unset;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-left: auto;
+        order: 2;
     }
 
     .menu-button {
-        grid-column: 4;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 42px;
-        height: 42px;
+        width: 40px;
+        height: 40px;
         padding: 0;
+        margin: 0;
+        order: 3;
+
+        background: transparent;
+        border: none;
+
         color: var(--text);
         font-size: 1.8rem;
-        order: unset;
+        line-height: 1;
     }
 
     .navigation {
-        grid-column: 1 / -1;
+        position: absolute;
+        top: 72px;
+        left: 0;
+
         width: 100%;
+        padding: 10px 5% 18px;
+
         display: none;
         flex-direction: column;
-        gap: 0;
-        padding: 8px 0 16px;
-        order: unset;
+
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
     }
 
     .navigation.open {
@@ -2079,8 +2094,7 @@ body {
     }
 
     .navigation a {
-        width: 100%;
-        padding: 12px 4px;
+        padding: 12px 0;
         border-bottom: 1px solid var(--border);
     }
 
@@ -2093,8 +2107,19 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 36px;
+        height: 40px;
     }
 
+    .nav-actions i {
+        font-size: 1.25rem;
+    }
+
+    .cart-count {
+        top: -2px;
+        right: -3px;
+    }
+}
 
     /* GENERAL */
     .container {
