@@ -2487,3 +2487,17 @@ body {
     -webkit-appearance: none;
     appearance: none;
 }
+.filter-button,
+.filter-close {
+    color: var(--brown);
+}
+.size-options button {
+    color: var(--text);
+}
+
+.size-options button:hover,
+.size-options button.active-size {
+    background: var(--brown);
+    color: #fff;
+    border-color: var(--brown);
+}
