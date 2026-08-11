@@ -2483,3 +2483,7 @@ body {
         grid-template-columns: 1fr;
     }
 }
+.search-form input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
